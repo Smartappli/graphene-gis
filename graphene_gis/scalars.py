@@ -1,7 +1,8 @@
 import json
-from graphql.language import ast
-from graphene.types import Scalar
+
 from django.contrib.gis.geos import GEOSGeometry
+from graphene.types import Scalar
+from graphql.language import ast
 
 
 class GISScalar(Scalar):
@@ -9,7 +10,7 @@ class GISScalar(Scalar):
     def geom_typeid(self):
         raise NotImplementedError(
             "GEOSScalar is an abstract class and doesn't have a 'geom_typeid'. \
-            Instantiate a concrete subtype instead."
+            Instantiate a concrete subtype instead.",
         )
 
     @staticmethod
