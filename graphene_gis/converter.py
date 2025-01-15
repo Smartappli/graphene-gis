@@ -1,6 +1,7 @@
 from django.contrib.gis.db import models as gis_models
 from django.contrib.postgres import fields
 from graphene_django.converter import convert_django_field
+
 from graphene_gis import scalars
 
 GIS_FIELD_SCALAR = {
@@ -8,7 +9,7 @@ GIS_FIELD_SCALAR = {
     "LineStringField": scalars.LineStringScalar,
     "PolygonField": scalars.PolygonScalar,
     "MultiPolygonField": scalars.MultiPolygonScalar,
-    "GeometryField": scalars.GISScalar
+    "GeometryField": scalars.GISScalar,
 }
 
 
@@ -20,7 +21,7 @@ GIS_FIELD_SCALAR = {
 def gis_converter(field, registry=None):
     class_name = field.__class__.__name__
     return GIS_FIELD_SCALAR[class_name](
-        required=not field.null, description=field.help_text
+        required=not field.null, description=field.help_text,
     )
 
 
