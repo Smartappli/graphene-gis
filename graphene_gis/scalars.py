@@ -56,13 +56,6 @@ class LineStringScalar(GISScalar):
         description = "A GIS LineString geojson"
 
 
-class LinearRingScalar(GISScalar):
-    geom_typeid = 2
-
-    class Meta:
-        description = "A GIS LienarRing geojson"
-
-
 class PolygonScalar(GISScalar):
     geom_typeid = 3
 
