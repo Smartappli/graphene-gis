@@ -17,7 +17,7 @@ GIS_FIELD_SCALAR = {
 
 @convert_django_field.register(gis_models.GeometryField)
 @convert_django_field.register(gis_models.MultiPolygonField)
-@convert_django_field.register(gis_models.MULtiLineStringField)
+@convert_django_field.register(gis_models.MultiLineStringField)
 @convert_django_field.register(gis_models.MultiPointField)
 @convert_django_field.register(gis_models.PolygonField)
 @convert_django_field.register(gis_models.LineStringField)
